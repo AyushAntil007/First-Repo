@@ -1,0 +1,136 @@
+:global(body) {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.viewSwitch button {
+  text-transform: capitalize;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+.activeViewBtn { background: #111827 !important; color: white; }
+
+.presenceBar {
+  background: white;
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.avatarStack { display: flex; }
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 11px;
+  margin-right: -5px;
+  border: 2px solid white;
+}
+
+.filterBar {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.chipsRow { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.chip {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+.activeChip { background: #dbeafe; border-color: #60a5fa; }
+.selectWrap { display: grid; gap: 6px; font-size: 13px; }
+.selectWrap select, .selectWrap input { padding: 7px; border: 1px solid #d1d5db; border-radius: 8px; }
+.clearButton { align-self: end; border: none; background: #ef4444; color: #fff; border-radius: 8px; padding: 8px; }
+
+.kanbanBoard { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; min-height: 520px; }
+.kanbanColumn { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 8px; display: grid; grid-template-rows: auto 1fr; }
+.columnHover { background: #f0f9ff; }
+.columnHeader { display: flex; justify-content: space-between; align-items: center; }
+.columnScroll { overflow-y: auto; max-height: 600px; padding-right: 4px; }
+.taskCard { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px; margin-bottom: 10px; touch-action: none; user-select: none; }
+.placeholder { opacity: 0.28; }
+.dragGhost {
+  position: fixed;
+  width: 220px;
+  pointer-events: none;
+  z-index: 50;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 10px;
+  opacity: 0.85;
+}
+
+.cardMeta { display: flex; justify-content: space-between; margin-top: 6px; font-size: 12px; }
+.priority { border-radius: 999px; padding: 2px 8px; color: #fff; text-transform: capitalize; }
+.pCritical { background: #dc2626; }
+.pHigh { background: #f97316; }
+.pMedium { background: #2563eb; }
+.pLow { background: #16a34a; }
+.overdue { color: #dc2626; font-weight: 600; }
+.assigneeLine { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.cardWatchers { margin-left: auto; display: flex; align-items: center; }
+.tinyAvatar { width: 20px; height: 20px; border-radius: 50%; color: white; font-size: 9px; display: inline-flex; align-items: center; justify-content: center; margin-left: -5px; border: 1px solid white; }
+.moreCount { font-size: 11px; margin-left: 6px; }
+.emptyColumn { border: 1px dashed #cbd5e1; border-radius: 10px; padding: 12px; text-align: center; color: #6b7280; }
+
+.tableWrap { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+.tableHead { display: grid; grid-template-columns: 3fr 1fr 1fr 1fr; padding: 10px; background: #f9fafb; border-bottom: 1px solid #e5e7eb; }
+.thButton { border: none; background: transparent; text-align: left; font-weight: 600; }
+.virtualViewport { height: 520px; overflow-y: auto; }
+.tableRow { display: grid; grid-template-columns: 3fr 1fr 1fr 1fr; align-items: center; padding: 0 10px; border-bottom: 1px solid #f3f4f6; }
+.tableRow strong { display: block; }
+.tableRow small { color: #6b7280; }
+.tableRow select { padding: 6px; border: 1px solid #d1d5db; border-radius: 8px; }
+.rowCount { padding: 10px; color: #6b7280; }
+.emptyState { padding: 30px; background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; text-align: center; }
+
+.timelineWrap { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px; }
+.timelineScroller { overflow-x: auto; position: relative; }
+.timelineHeader { display: grid; grid-template-columns: repeat(31, 34px); gap: 0; margin-left: 220px; font-size: 12px; color: #6b7280; }
+.timelineRow { display: grid; grid-template-columns: 220px 1fr; align-items: center; min-height: 34px; border-top: 1px solid #f3f4f6; }
+.timelineTitle { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.timelineTrack { height: 28px; position: relative; }
+.timelineBar { position: absolute; height: 18px; top: 5px; border-radius: 999px; }
+.todayLine { position: absolute; top: 0; bottom: 0; width: 2px; background: #ef4444; margin-left: 220px; pointer-events: none; }
+
+@media (max-width: 1024px) {
+  .filterBar { grid-template-columns: 1fr 1fr; }
+  .kanbanBoard { grid-template-columns: 1fr 1fr; }
+}
